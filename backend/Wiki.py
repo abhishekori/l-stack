@@ -14,10 +14,15 @@ class Wiki:
         googleSearch = GoogleSearch()
         query = searchQuery + "Wiki"
         queryResponse = googleSearch.search(query,1)
-        wikiLink = queryResponse[0]['link']
+        wikiLink = queryResponse
         return wikiLink
 
     def getInfo(self,searchKey):
+        summary = ""
         wikiLink = self.getWikiLink(searchKey)
-        articleName = self.extractWikiArticleName(wikiLink)
-        return wikipedia.summary(articleName)
+        articleName = self.extractWikiArticleName(wikiLink[0]['link'])
+        try:
+            summary = wikipedia.summary(articleName)
+        except Exception:
+            summary = wikiLink[0]['description']
+        return summary
