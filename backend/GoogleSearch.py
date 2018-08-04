@@ -16,7 +16,7 @@ class GoogleSearch:
         res=self.parse_results(reqObj.text,key)
         return res
 
-     def makeRequest(self,url):
+    def makeRequest(self,url):
         res=requests.get(url, headers=self.USER_AGENT)
         return res
 
@@ -42,5 +42,8 @@ class GoogleSearch:
                     rank += 1
         return found_results
 
+
+# gs=GoogleSearch()
+# print(gs.search("hello world",1))
 
 
