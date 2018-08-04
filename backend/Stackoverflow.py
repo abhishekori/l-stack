@@ -15,7 +15,7 @@ class Stackoverflow:
 
     def callStackoverflow(self,query,number_results):
         # https://api.stackexchange.com/2.2/tags/typescript/related?page=1&pagesize=5&site=stackoverflow
-        url = "https://api.stackexchange.com/2.2/tags/" + query + "/related?page=1&pagesize=" + number_results + "&site=stackoverflow"
+        url = "https://api.stackexchange.com/2.2/tags/" + query + "/related?page=1&pagesize=" + str(number_results) + "&site=stackoverflow"
         response = requests.get(url)
         return response.text
 
