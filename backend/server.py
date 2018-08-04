@@ -35,12 +35,17 @@ def getTags():
 @app.route('/summary')
 def summary():
     response = {}
-    infoResponse = info.getInfo(request.args.get('q'))
-    tagsResponse = tags.getRelatedTags(request.args.get('q'))
-    setupResponse = setup.getOfficialWebsite(request.args.get('q'))
-    response['info'] = infoResponse
-    response['tags'] = tagsResponse
-    response['setup'] = setupResponse
+    try:
+        infoResponse = info.getInfo(request.args.get('q'))
+        tagsResponse = tags.getRelatedTags(request.args.get('q'))
+        setupResponse = setup.getOfficialWebsite(request.args.get('q'))
+        response['info'] = infoResponse
+        response['tags'] = tagsResponse
+        response['setup'] = setupResponse
+    except Exception:
+        response['info'] = "Some error occurred... Please try again later"
+        response['tags'] = "Some error occurred... Please try again later"
+        response['setup'] = "Some error occurred... Please try again later"
     return(jsonify(response))
 
 if __name__ == "__main__":
