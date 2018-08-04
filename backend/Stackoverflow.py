@@ -20,6 +20,6 @@ class Stackoverflow:
         return response.text
 
     def getRelatedTags(self,query):
-        response = self.callStackoverflow(query)
+        response = self.callStackoverflow(query,5)
         relatedTags = self.parseResponse(json.loads(response))
         return relatedTags
