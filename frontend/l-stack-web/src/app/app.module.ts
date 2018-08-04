@@ -7,10 +7,12 @@ import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '../../node_modules/@angular/common';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
