@@ -66,14 +66,14 @@
         <a href="{{helloWorld.link}}">{{helloWorld.link}}</a>
       </div>
       <div class="ui raised segment">
-        <h3 class="ui header">Realated Questions - {{intent}}</h3>
+        <h3 class="ui header">Related Questions - {{intent}}</h3>
         <!-- each question  -->
         <div *ngFor="let question of suggestions">
           <h5>
             {{question.question}}
           </h5>
           <a href="{{question.link}}">{{question.link}}</a>
-          <br>
+          <p>rank - {{question.rank}}</p>
           <hr>
           <br>
         </div>

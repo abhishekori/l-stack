@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   helloWorld;
   suggestions = [];
   intent ;
+  moocs;
 
   isLoading = true;
 
@@ -62,6 +63,7 @@ export class HomeComponent implements OnInit {
       this.helloWorld = res['helloworlds'][0];
       this.suggestions = res['suggestions'];
       this.intent = res['intent'];
+      this.moocs = res['moocs'][0]['udemy.com'][0];
       this.isLoading = false;
       this.allBreadCrumbs.push(this.searchQuery);
     });
@@ -90,6 +92,7 @@ export class HomeComponent implements OnInit {
       this.helloWorld = res['helloworlds'][0];
       this.suggestions = res['suggestions'];
       this.intent = res['intent'];
+      this.moocs = res['moocs'][0]['udemy.com'][0];
       this.isLoading = false;
       this.allBreadCrumbs.push(tag);
     });
