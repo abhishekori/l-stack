@@ -2,7 +2,7 @@
 from GoogleSearch import GoogleSearch
 gs=GoogleSearch()
 
-class HelloWrold:
+class HelloWorld:
 
 
 
@@ -20,8 +20,3 @@ class HelloWrold:
 
 # hw=HelloWrold()
 # print(hw.getHelloWorlds('java'))
-
-
-
-    
-

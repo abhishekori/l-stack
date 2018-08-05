@@ -51,6 +51,7 @@ def getIntent():
 @app.route('/summary')
 def summary():
     response = {}
+    adj = ""
     try:
         req = request.args.get('q').replace("+"," ")
         print(req)
