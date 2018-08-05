@@ -1,8 +1,10 @@
 <div>
 
-  <div class="ui fluid icon input" style="margin: 2%">
-    <input type="text" placeholder="Search a very wide input...">
-    <i class="search icon"></i>
+  <div class="ui fluid action input" style="margin: 4%;">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery">
+    <button class="ui icon button" (click)="submitQuery()">
+      <i class="search icon"></i>
+    </button>
   </div>
 
   <div style="margin: 4%;">
@@ -12,27 +14,71 @@
     </div>
   </div>
 
+
+  <h3 style="margin: 4%;">
+    Search results for {{searchQuery}}
+  </h3>
   <div style="margin: 4%;">
-    <div class="ui piled segment" *ngFor="let item of allBreadCrumbs">
-      <h4 class="ui header">A header</h4>
-      <p>Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit
-        at. Usu ocurreret referrentur at, cu epicurei appellantur vix. Cum ea laoreet recteque electram, eos choro alterum
-        definiebas in. Vim dolorum definiebas an. Mei ex natum rebum iisque.</p>
-      <p>Audiam quaerendum eu sea, pro omittam definiebas ex. Te est latine definitiones. Quot wisi nulla ex duo. Vis sint solet
-        expetenda ne, his te phaedrum referrentur consectetuer. Id vix fabulas oporteat, ei quo vide phaedrum, vim vivendum
-        maiestatis in.</p>
-      <p>Eu quo homero blandit intellegebat. Incorrupte consequuntur mei id. Mei ut facer dolores adolescens, no illum aperiri
-        quo, usu odio brute at. Qui te porro electram, ea dico facete utroque quo. Populo quodsi te eam, wisi everti eos
-        ex, eum elitr altera utamur at. Quodsi convenire mnesarchum eu per, quas minimum postulant per id.</p>
+    <!-- intro -->
+    <div class="ui raised segment">
+      <h3 class="ui header">Intro to {{searchQuery}}</h3>
+      <p>
+        {{info}}
+      </p>
+    </div>
+    <div class="ui raised segment">
+      <h3 class="ui header">Set up - {{searchQuery}}</h3>
+      <div *ngIf='macSetup'>
+        <h5>
+          macOSX : {{macSetup.title}}
+        </h5>
+        <p>{{macSetup.description}}</p>
+        <a href="{{macSetup.link}}">{{macSetup.link}}</a>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div *ngIf='winSetup'>
+        <h5>
+          Windows : {{winSetup.title}}
+        </h5>
+        <p>{{winSetup.description}}</p>
+        <a href="{{winSetup.link}}">{{winSetup.link}}</a>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div *ngIf='linuxSetup'>
+        <h5>
+          linux : {{linuxSetup.title}}
+        </h5>
+        <p>{{linuxSetup.description}}</p>
+        <a href="{{linuxSetup.link}}">{{linuxSetup.link}}</a>
+      </div>
+    </div>
+    <div class="ui raised segment">
+      <h3 class="ui header">{{searchQuery}}</h3>
+      <p>
+        {{info}}
+      </p>
+    </div>
+    <div class="ui raised segment">
+      <h3 class="ui header">{{searchQuery}}</h3>
+      <p>
+        {{info}}
+      </p>
     </div>
   </div>
 
-  <div style="margin: 4%">
-    <div class="ui circular segment">
-      Buy Now
-    </div>
-    <div class="ui inverted circular segment">
-      Buy Now
+  <h3 style="margin: 4%;">
+    Related Tags
+  </h3>
+
+  <div class="ui cards" style="margin: 4%;">
+    <div class="card" *ngFor="let tag of tags">
+      <div class="content">
+        <div class="header">{{tag}}</div>
+      </div>
     </div>
   </div>
 
