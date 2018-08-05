@@ -58,16 +58,27 @@
         </div>
       </div>
       <div class="ui raised segment">
-        <h3 class="ui header">{{searchQuery}}</h3>
-        <p>
-          {{info}}
-        </p>
+        <h3 class="ui header">Hello World - {{searchQuery}}</h3>
+        <h5>
+          {{helloWorld.title}}
+        </h5>
+        <p>{{helloWorld.description}}</p>
+        <a href="{{helloWorld.link}}">{{helloWorld.link}}</a>
       </div>
       <div class="ui raised segment">
-        <h3 class="ui header">{{searchQuery}}</h3>
-        <p>
-          {{info}}
-        </p>
+        <h3 class="ui header">Realated Questions - {{searchQuery}}</h3>
+        <!-- each question  -->
+        <div *ngFor="let question of suggestions">
+          <h5>
+            {{question.question}}
+          </h5>
+          <a href="{{question.link}}">{{question.link}}</a>
+          <br>
+          <hr>
+          <br>
+        </div>
+
+
       </div>
     </div>
 
@@ -85,7 +96,7 @@
 
   </div>
   <div *ngIf='isLoading' style="margin: 4%">
-      <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
 
 </div>
