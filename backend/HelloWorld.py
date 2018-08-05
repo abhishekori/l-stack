@@ -12,7 +12,7 @@ class HelloWorld:
 
     def getHelloWorlds(self,key):
         sarchQuery=key+" Hello World program"
-        helloWorlds=gs.search(sarchQuery,3)
+        helloWorlds=gs.search(sarchQuery,1)
         return helloWorlds
 
 
