@@ -16,22 +16,11 @@ class MOOC:
 
         for m in settings.settings['moocs']:
             searchQuery='site:'+m+' '+key
-            res.append({m:gs.search(searchQuery,3)})
+            res.append({m:gs.search(searchQuery,1)})
         return res
 
-    
+
 
 
 # m=MOOC()
 # print(json.dumps(m.getMoocs('python'),indent=2, sort_keys=True))
-
-
-
-
-        
-
-
-    
-
-
-

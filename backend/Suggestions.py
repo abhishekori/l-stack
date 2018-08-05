@@ -8,7 +8,7 @@ class Suggestions:
     def __init__(self):
         print("suggestions")
 
-    def get_cosine(vec1, vec2):
+    def get_cosine(self,vec1, vec2):
          intersection = set(vec1.keys()) & set(vec2.keys())
          numerator = sum([vec1[x] * vec2[x] for x in intersection])
 
@@ -21,9 +21,10 @@ class Suggestions:
          else:
             return float(numerator) / denominator
 
-    WORD = re.compile(r'\w+')
 
-    def text_to_vector(text):
+
+    def text_to_vector(self,text):
+         WORD = re.compile(r'\w+')
          words = WORD.findall(text)
          return Counter(words)
 
@@ -38,7 +39,7 @@ class Suggestions:
         jsonResponse = json.loads(response.text)
         items = jsonResponse['items']
         for item in items:
-            cosine = get_cosine(text_to_vector(sentence),text_to_vector(item['title']))
+            cosine = self.get_cosine(self.text_to_vector(sentence),self.text_to_vector(item['title']))
             cosineScores.append(cosine)
             cosines[cosine] = item
 
@@ -49,6 +50,6 @@ class Suggestions:
             suggestion['rank'] = (x + 1)
             suggestion['question'] = cosines[score]['title']
             suggestion['link'] = cosines[score]['link']
-            suggestions.append(suggestion)
+            suggestions .append(suggestion)
 
         return suggestions

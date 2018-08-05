@@ -15,7 +15,7 @@ class Setup:
     def __init__(self):
         print('setup class')
 
-    
+
     def makeRequest(self,url):
         res=requests.get(url, headers=self.USER_AGENT)
 
@@ -35,16 +35,11 @@ class Setup:
         setUps=[]
         for o in self.os:
             searchQ='site:'+offiDName+' '+'set up on '+o
-            setUps.append({o:gs.search(searchQ,3)})
+            setUps.append({o:gs.search(searchQ,1)})
         return setUps
 
-    
 
-    
+
+
 # s=Setup()
 # print(s.getOfficialWebsite('angular'))
-            
-
-    
-
-
