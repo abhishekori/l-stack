@@ -9,8 +9,8 @@
 
   <div style="margin: 4%;">
     <div *ngFor="let item of allBreadCrumbs" class="ui breadcrumb">
-      <a href="item.path" class="section">{{item.value}}</a>
-      <span class="divider">/</span>
+      <a href="item.path" class="section">{{item}}</a>
+      <i class="right angle icon divider"></i>
     </div>
   </div>
 
@@ -18,68 +18,74 @@
   <h3 style="margin: 4%;">
     Search results for {{searchQuery}}
   </h3>
-  <div style="margin: 4%;">
-    <!-- intro -->
-    <div class="ui raised segment">
-      <h3 class="ui header">Intro to {{searchQuery}}</h3>
-      <p>
-        {{info}}
-      </p>
-    </div>
-    <div class="ui raised segment">
-      <h3 class="ui header">Set up - {{searchQuery}}</h3>
-      <div *ngIf='macSetup'>
-        <h5>
-          macOSX : {{macSetup.title}}
-        </h5>
-        <p>{{macSetup.description}}</p>
-        <a href="{{macSetup.link}}">{{macSetup.link}}</a>
+  <div *ngIf='!isLoading'>
+    <div style="margin: 4%;">
+      <!-- intro -->
+      <div class="ui raised segment">
+        <h3 class="ui header">Intro to {{searchQuery}}</h3>
+        <p>
+          {{info}}
+        </p>
       </div>
-      <br>
-      <hr>
-      <br>
-      <div *ngIf='winSetup'>
-        <h5>
-          Windows : {{winSetup.title}}
-        </h5>
-        <p>{{winSetup.description}}</p>
-        <a href="{{winSetup.link}}">{{winSetup.link}}</a>
+      <div class="ui raised segment">
+        <h3 class="ui header">Set up - {{searchQuery}}</h3>
+        <div *ngIf='macSetup'>
+          <h5>
+            macOSX : {{macSetup.title}}
+          </h5>
+          <p>{{macSetup.description}}</p>
+          <a href="{{macSetup.link}}">{{macSetup.link}}</a>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div *ngIf='winSetup'>
+          <h5>
+            Windows : {{winSetup.title}}
+          </h5>
+          <p>{{winSetup.description}}</p>
+          <a href="{{winSetup.link}}">{{winSetup.link}}</a>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div *ngIf='linuxSetup'>
+          <h5>
+            linux : {{linuxSetup.title}}
+          </h5>
+          <p>{{linuxSetup.description}}</p>
+          <a href="{{linuxSetup.link}}">{{linuxSetup.link}}</a>
+        </div>
       </div>
-      <br>
-      <hr>
-      <br>
-      <div *ngIf='linuxSetup'>
-        <h5>
-          linux : {{linuxSetup.title}}
-        </h5>
-        <p>{{linuxSetup.description}}</p>
-        <a href="{{linuxSetup.link}}">{{linuxSetup.link}}</a>
+      <div class="ui raised segment">
+        <h3 class="ui header">{{searchQuery}}</h3>
+        <p>
+          {{info}}
+        </p>
+      </div>
+      <div class="ui raised segment">
+        <h3 class="ui header">{{searchQuery}}</h3>
+        <p>
+          {{info}}
+        </p>
       </div>
     </div>
-    <div class="ui raised segment">
-      <h3 class="ui header">{{searchQuery}}</h3>
-      <p>
-        {{info}}
-      </p>
+
+    <h3 style="margin: 4%;">
+      Related Tags
+    </h3>
+
+    <div class="ui cards" style="margin: 4%;">
+      <div class="card" *ngFor="let tag of tags" (click)="reloadFor(tag)">
+        <div class="content">
+          <div class="header">{{tag}}</div>
+        </div>
+      </div>
     </div>
-    <div class="ui raised segment">
-      <h3 class="ui header">{{searchQuery}}</h3>
-      <p>
-        {{info}}
-      </p>
-    </div>
+
   </div>
-
-  <h3 style="margin: 4%;">
-    Related Tags
-  </h3>
-
-  <div class="ui cards" style="margin: 4%;">
-    <div class="card" *ngFor="let tag of tags">
-      <div class="content">
-        <div class="header">{{tag}}</div>
-      </div>
-    </div>
+  <div *ngIf='isLoading' style="margin: 4%">
+      <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
   </div>
 
 </div>
