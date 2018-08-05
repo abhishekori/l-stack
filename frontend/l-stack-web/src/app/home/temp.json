@@ -1,0 +1,87 @@
+{
+    "info": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few\u00a0...",
+    "setup": [
+        {
+            "windows": [
+                {
+                    "description": "In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. Click OK. ... To set the path permanently, set the path in your startup file. ... Find expert help on Java installation and setup.",
+                    "keyword": "site:java.com set up on windows",
+                    "link": "https://www.java.com/en/download/help/path.xml",
+                    "rank": 1,
+                    "title": "How do I set or change the PATH system variable? - Java"
+                },
+                {
+                    "description": "What is the offline method for downloading and installing Java for a Windows computer? ... Find expert help on Java installation and setup. Select Language\u00a0...",
+                    "keyword": "site:java.com set up on windows",
+                    "link": "https://www.java.com/en/download/help/windows_offline_download.xml",
+                    "rank": 2,
+                    "title": "Instructions to download and install Java for Windows offline"
+                },
+                {
+                    "description": "How do I enable the latest Java version on my Windows system? ... Find expert help on Java installation and setup. Select Language | About Java | Support\u00a0...",
+                    "keyword": "site:java.com set up on windows",
+                    "link": "https://www.java.com/en/download/help/update_runtime_settings.xml",
+                    "rank": 3,
+                    "title": "Update Java runtime settings on Windows"
+                }
+            ]
+        },
+        {
+            "mac": [
+                {
+                    "description": "Mac System Requirements for Oracle Java 7 and later versions. Intel-based ... Install Java on Mac. Download ... Find expert help on Java installation and setup.",
+                    "keyword": "site:java.com set up on mac",
+                    "link": "https://java.com/en/download/help/mac_install.xml",
+                    "rank": 1,
+                    "title": "How do I install Java for my Mac?"
+                },
+                {
+                    "description": "Information about the Java Control Panel for Mac. ... You can set preferences including proxy servers in this setting. Temporary Internet Files: Files used in Java\u00a0...",
+                    "keyword": "site:java.com set up on mac",
+                    "link": "https://www.java.com/en/download/help/mac_controlpanel.xml",
+                    "rank": 2,
+                    "title": "Where is the Java Control Panel on Mac?"
+                },
+                {
+                    "description": "For Mac OS X 10.6 and below, use the Software Update feature (available on the Apple menu) to check that you have the most up-to-date version of Java 6 for\u00a0...",
+                    "keyword": "site:java.com set up on mac",
+                    "link": "https://www.java.com/en/download/faq/java_mac.xml",
+                    "rank": 3,
+                    "title": "Mac OS X information for installing and using Java"
+                }
+            ]
+        },
+        {
+            "linux": [
+                {
+                    "description": "Follow these steps to download and install Java for Linux. Download; Install ... Find expert help on Java installation and setup \u00b7 Select Language | About Java\u00a0...",
+                    "keyword": "site:java.com set up on linux",
+                    "link": "https://www.java.com/en/download/help/linux_x64_install.xml",
+                    "rank": 1,
+                    "title": "Linux 64-bit installation instructions for Java"
+                },
+                {
+                    "description": "This installs the Java Runtime Environment (JRE) for 32-bit Linux, using an archive binary file ( .tar.gz ) that can be installed by anyone .... Start the Firefox browser, or restart it if it is already up. ... Find expert help on Java installation and setup.",
+                    "keyword": "site:java.com set up on linux",
+                    "link": "https://www.java.com/en/download/help/linux_install.xml",
+                    "rank": 2,
+                    "title": "How do I download and install 32-bit Java for Linux?"
+                },
+                {
+                    "description": "Platform(s): Oracle Linux, Red Hat Linux, SUSE Linux, Solaris SPARC, Windows ... The PATH system variable can be set using System Utility in control panel on\u00a0...",
+                    "keyword": "site:java.com set up on linux",
+                    "link": "https://www.java.com/en/download/help/path.xml",
+                    "rank": 3,
+                    "title": "How do I set or change the PATH system variable? - Java"
+                }
+            ]
+        }
+    ],
+    "tags": [
+        "java",
+        "android",
+        "spring",
+        "swing",
+        "eclipse"
+    ]
+}
