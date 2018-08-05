@@ -39,6 +39,13 @@ def getTags():
     res = tags.getRelatedTags(request.args.get('q'))
     return(jsonify(res))
 
+
+@app.route('/getSuggestions')
+def getSuggestions():
+    req = request.args.get('q').replace("+"," ")
+    suggestionsResponse = suggestions.getSuggestions(req)
+    return(jsonify(suggestionsResponse))
+
 @app.route('/getIntent')
 def getIntent():
         req = request.args.get('q').replace("+"," ")
@@ -91,8 +98,8 @@ def summary():
         response['helloworlds'] = "Some error occurred... Please try again later"
 
     try:
-        suggestions = suggestions.getSuggestions(req)
-        response['suggestions'] = suggestions
+        suggestionsResponse = suggestions.getSuggestions(req)
+        response['suggestions'] = suggestionsResponse
     except Exception:
         response['suggestions'] = "Some error occurred... Please try again later"
 
