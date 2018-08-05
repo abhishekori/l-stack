@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   linuxSetup;
   helloWorld;
   suggestions = [];
+  intent ;
 
   isLoading = true;
 
@@ -60,6 +61,7 @@ export class HomeComponent implements OnInit {
       this.linuxSetup = setup[2]['linux'][0];
       this.helloWorld = res['helloworlds'][0];
       this.suggestions = res['suggestions'];
+      this.intent = res['intent'];
       this.isLoading = false;
       this.allBreadCrumbs.push(this.searchQuery);
     });
@@ -87,6 +89,7 @@ export class HomeComponent implements OnInit {
       this.linuxSetup = setup[2]['linux'][0];
       this.helloWorld = res['helloworlds'][0];
       this.suggestions = res['suggestions'];
+      this.intent = res['intent'];
       this.isLoading = false;
       this.allBreadCrumbs.push(tag);
     });

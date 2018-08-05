@@ -22,13 +22,13 @@
     <div style="margin: 4%;">
       <!-- intro -->
       <div class="ui raised segment">
-        <h3 class="ui header">Intro to {{searchQuery}}</h3>
+        <h3 class="ui header">Intro to {{intent}}</h3>
         <p>
           {{info}}
         </p>
       </div>
       <div class="ui raised segment">
-        <h3 class="ui header">Set up - {{searchQuery}}</h3>
+        <h3 class="ui header">Set up - {{intent}}</h3>
         <div *ngIf='macSetup'>
           <h5>
             macOSX : {{macSetup.title}}
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="ui raised segment">
-        <h3 class="ui header">Hello World - {{searchQuery}}</h3>
+        <h3 class="ui header">Hello World - {{intent}}</h3>
         <h5>
           {{helloWorld.title}}
         </h5>
@@ -66,7 +66,7 @@
         <a href="{{helloWorld.link}}">{{helloWorld.link}}</a>
       </div>
       <div class="ui raised segment">
-        <h3 class="ui header">Realated Questions - {{searchQuery}}</h3>
+        <h3 class="ui header">Realated Questions - {{intent}}</h3>
         <!-- each question  -->
         <div *ngFor="let question of suggestions">
           <h5>
@@ -77,8 +77,6 @@
           <hr>
           <br>
         </div>
-
-
       </div>
     </div>
 
