@@ -5,6 +5,7 @@ from flask_cors import CORS
 from Setup import Setup
 from Wiki import Wiki
 from Stackoverflow import Stackoverflow
+from Intent import Intent
 
 app = Flask(__name__)
 CORS(app)
@@ -12,7 +13,7 @@ CORS(app)
 setup = Setup()
 info = Wiki()
 tags = Stackoverflow()
-
+intent = Intent()
 
 @app.route('/')
 def index():return 'Hola! IIM'
@@ -32,13 +33,28 @@ def getTags():
     res = tags.getRelatedTags(request.args.get('q'))
     return(jsonify(res))
 
+@app.route('/getIntent')
+def getIntent():
+        req = request.args.get('q').replace("+"," ")
+        print(req)
+        adj = intent.getIntent(req)
+        if adj == 'error':
+            adj = req
+        return adj
+
+
 @app.route('/summary')
 def summary():
     response = {}
     try:
-        infoResponse = info.getInfo(request.args.get('q'))
-        tagsResponse = tags.getRelatedTags(request.args.get('q'))
-        setupResponse = setup.getOfficialWebsite(request.args.get('q'))
+        req = request.args.get('q').replace("+"," ")
+        print(req)
+        adj = intent.getIntent(req)
+        if adj == 'error':
+            adj = req
+        infoResponse = info.getInfo(adj)
+        tagsResponse = tags.getRelatedTags(adj)
+        setupResponse = setup.getOfficialWebsite(adj)
         response['info'] = infoResponse
         response['tags'] = tagsResponse
         response['setup'] = setupResponse
