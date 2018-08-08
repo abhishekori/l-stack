@@ -10,10 +10,10 @@ class HelloWorld:
         print("hello world class")
 
 
-    def getHelloWorlds(self,key):
+    def getHelloWorlds(self,key,map):
         sarchQuery=key+" Hello World program"
         helloWorlds=gs.search(sarchQuery,1)
-        return helloWorlds
+        map['helloworlds'] = helloWorlds
 
 
 

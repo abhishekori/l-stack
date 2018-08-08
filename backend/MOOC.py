@@ -10,14 +10,14 @@ class MOOC:
         print('MOOC class')
 
 
-    def getMoocs(self,key):
+    def getMoocs(self,key,map):
 
         res=[]
 
         for m in settings.settings['moocs']:
             searchQuery='site:'+m+' '+key
             res.append({m:gs.search(searchQuery,1)})
-        return res
+        map['moocs'] = res
 
 
 

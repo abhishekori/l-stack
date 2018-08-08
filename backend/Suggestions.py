@@ -29,7 +29,7 @@ class Suggestions:
          return Counter(words)
 
 
-    def getSuggestions(self,sentence):
+    def getSuggestions(self,sentence,map):
         cosineScores = []
         cosines = {}
         suggestions = []
@@ -52,4 +52,4 @@ class Suggestions:
             suggestion['link'] = cosines[score]['link']
             suggestions .append(suggestion)
 
-        return suggestions
+        map['suggestions'] = suggestions

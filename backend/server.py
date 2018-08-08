@@ -2,6 +2,8 @@ from flask import request,jsonify
 from flask import Flask
 from flask_cors import CORS
 
+import threading
+
 from Setup import Setup
 from Wiki import Wiki
 from Stackoverflow import Stackoverflow
@@ -24,6 +26,7 @@ suggestions = Suggestions()
 @app.route('/')
 def index():return 'Hola! IIM'
 
+'''
 @app.route('/getSetup')
 def getSetup():
     res = setup.getOfficialWebsite(request.args.get('q'))
@@ -55,55 +58,63 @@ def getIntent():
             adj = req
         return adj
 
+'''
 
 @app.route('/summary')
 def summary():
     response = {}
     adj = ""
     req = request.args.get('q').replace("+"," ")
-    adj = intent.getIntent(req)
-    if adj == 'error':
-        adj = req
 
-    response['intent'] = adj
+    thread1 = threading.Thread(target = intent.getIntent , args = (req,response,))
+    thread1.start()
+    thread1.join()
+    adj = response.get('intent')
 
     try:
-        infoResponse = info.getInfo(adj)
-        response['info'] = infoResponse
+        thread2 = threading.Thread(target =  info.getInfo, args = (adj,response,))
     except Exception:
         response['info'] = "Some error occurred... Please try again later"
 
     try:
-        tagsResponse = tags.getRelatedTags(adj)
-        response['tags'] = tagsResponse
+        thread3 = threading.Thread(target =  tags.getRelatedTags, args = (adj,response,))
     except Exception:
         response['tags'] = "Some error occurred... Please try again later"
 
     try:
-        setupResponse = setup.getOfficialWebsite(adj)
-        response['setup'] = setupResponse
+        thread4 = threading.Thread(target =  setup.getOfficialWebsite, args = (adj,response,))
     except Exception:
         response['setup'] = "Some error occurred... Please try again later"
 
     try:
-        moocResponse = mooc.getMoocs(adj)
-        response['moocs'] = moocResponse
+        thread5 = threading.Thread(target =  mooc.getMoocs, args = (adj,response,))
     except Exception:
         response['moocs'] = "Some error occurred... Please try again later"
 
     try:
-        helloworldResponse = helloworld.getHelloWorlds(adj)
-        response['helloworlds'] = helloworldResponse
+        thread6 = threading.Thread(target =  helloworld.getHelloWorlds, args = (adj,response,))
     except Exception:
         response['helloworlds'] = "Some error occurred... Please try again later"
 
     try:
-        suggestionsResponse = suggestions.getSuggestions(req)
-        response['suggestions'] = suggestionsResponse
+        thread7 = threading.Thread(target =  suggestions.getSuggestions, args = (req,response,))
     except Exception:
         response['suggestions'] = "Some error occurred... Please try again later"
+
+    thread2.start()
+    thread3.start()
+    thread4.start()
+    thread5.start()
+    thread6.start()
+    thread7.start()
+    thread2.join()
+    thread3.join()
+    thread4.join()
+    thread5.join()
+    thread6.join()
+    thread7.join()
 
     return(jsonify(response))
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0')
+    app.run(host = '0.0.0.0',debug = True)

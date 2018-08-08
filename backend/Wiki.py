@@ -17,7 +17,7 @@ class Wiki:
         wikiLink = queryResponse
         return wikiLink
 
-    def getInfo(self,searchKey):
+    def getInfo(self,searchKey,map):
         summary = ""
         wikiLink = self.getWikiLink(searchKey)
         articleName = self.extractWikiArticleName(wikiLink[0]['link'])
@@ -25,4 +25,4 @@ class Wiki:
             summary = wikipedia.summary(articleName)
         except Exception:
             summary = wikiLink[0]['description']
-        return summary
+        map['info'] = summary

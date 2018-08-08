@@ -5,10 +5,12 @@ class Intent:
     def __init__(self):
         print("intent")
 
-    def getIntent(self,sentence):
+    def getIntent(self,sentence, map):
+        print("test")
         tagged_sent = tag.pos_tag(word_tokenize(sentence))
         for taged in tagged_sent:
             (word,token) = taged
             if token == 'JJ' or token == 'NN':
-                return word
-        return 'error'
+                map['intent'] = word
+                return
+        map['intent'] = sentence

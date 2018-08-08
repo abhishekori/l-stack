@@ -28,7 +28,7 @@ class Setup:
 
 
 
-    def getOfficialWebsite(self,key):
+    def getOfficialWebsite(self,key,map):
         #link=res[0]['link']
         offiWebsiteRes=gs.search(key,1)
         offiDName=self.getDomainName(offiWebsiteRes[0]['link'])
@@ -36,7 +36,7 @@ class Setup:
         for o in self.os:
             searchQ='site:'+offiDName+' '+'set up on '+o
             setUps.append({o:gs.search(searchQ,1)})
-        return setUps
+        map['setup'] = setUps
 
 
 

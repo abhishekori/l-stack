@@ -19,7 +19,7 @@ class Stackoverflow:
         response = requests.get(url)
         return response.text
 
-    def getRelatedTags(self,query):
+    def getRelatedTags(self,query,map):
         response = self.callStackoverflow(query,5)
         relatedTags = self.parseResponse(json.loads(response))
-        return relatedTags
+        map['tags'] = relatedTags
