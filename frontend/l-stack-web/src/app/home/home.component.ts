@@ -17,6 +17,10 @@ export class HomeComponent implements OnInit {
   macSetup;
   winSetup;
   linuxSetup;
+  helloWorld;
+  suggestions = [];
+  intent ;
+  moocs;
 
   isLoading = true;
 
@@ -40,7 +44,7 @@ export class HomeComponent implements OnInit {
   submitQuery() {
     this.isLoading = true;
     console.log(this.searchQuery);
-    return this.http.get(`http://localhost:5000/summary?q=${this.searchQuery}`).subscribe(res => {
+    return this.http.get(`http://192.168.43.191:5000/summary?q=${this.searchQuery}`).subscribe(res => {
       console.log(res);
       this.info = res['info'];
       // clear the array once
@@ -56,6 +60,10 @@ export class HomeComponent implements OnInit {
       this.macSetup = setup[1]['mac'][0];
       this.winSetup = setup[0]['windows'][0];
       this.linuxSetup = setup[2]['linux'][0];
+      this.helloWorld = res['helloworlds'][0];
+      this.suggestions = res['suggestions'];
+      this.intent = res['intent'];
+      this.moocs = res['moocs'][0]['udemy.com'][0];
       this.isLoading = false;
       this.allBreadCrumbs.push(this.searchQuery);
     });
@@ -66,7 +74,7 @@ export class HomeComponent implements OnInit {
     console.log('searching for ', tag);
     this.isLoading = true;
     this.searchQuery = tag;
-    return this.http.get(`http://localhost:5000/summary?q=${tag}`).subscribe(res => {
+    return this.http.get(`http://192.168.43.191:5000/summary?q=${tag}`).subscribe(res => {
       console.log(res);
       this.info = res['info'];
       this.tags = [];
@@ -81,6 +89,10 @@ export class HomeComponent implements OnInit {
       this.macSetup = setup[1]['mac'][0];
       this.winSetup = setup[0]['windows'][0];
       this.linuxSetup = setup[2]['linux'][0];
+      this.helloWorld = res['helloworlds'][0];
+      this.suggestions = res['suggestions'];
+      this.intent = res['intent'];
+      this.moocs = res['moocs'][0]['udemy.com'][0];
       this.isLoading = false;
       this.allBreadCrumbs.push(tag);
     });

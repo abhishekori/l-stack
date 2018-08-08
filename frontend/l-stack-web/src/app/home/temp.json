@@ -1,87 +1,143 @@
 {
-    "info": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few\u00a0...",
+    "helloworlds": [
+      {
+        "description": "6 days ago - The best way to see the power of an AngularJS Application is to create your first basic program \"Hello World\" app in Angular.JS. There are\u00a0...", 
+        "keyword": "angular Hello World program", 
+        "link": "https://www.guru99.com/angularjs-first-program.html", 
+        "rank": 1, 
+        "title": "AngularJS Hello World Application: Your First Example Program"
+      }
+    ], 
+    "info": "Angular (commonly referred to as \"Angular 2+\" or \"Angular v2 and above\") is a TypeScript-based open-source front-end web application platform led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.", 
+    "intent": "angular", 
+    "moocs": [
+      {
+        "udemy.com": [
+          {
+            "description": "Learn how to connect your Angular Frontend to a NodeJS & Express & MongoDB Backend by building a real Application | By Maximilian Schwarzm\u00fcller.", 
+            "keyword": "site:udemy.com angular", 
+            "link": "https://www.udemy.com/topic/angular/", 
+            "rank": 1, 
+            "title": "Top Angular Courses Online - Updated July 2018 | Udemy"
+          }
+        ]
+      }, 
+      {
+        "udacity.com": [
+          {
+            "description": "Learn how to build Single Page Applications in various Front End Frameworks! In this course, you'll learn how to create both an Angular application and an\u00a0...", 
+            "keyword": "site:udacity.com angular", 
+            "link": "https://www.udacity.com/course/front-end-frameworks--ud894", 
+            "rank": 1, 
+            "title": "Front End Frameworks | Udacity"
+          }
+        ]
+      }, 
+      {
+        "ocw.mit.edu": [
+          {
+            "description": "This section provides materials from a lecture session on angular momentum and torque. Materials include a session overview, assignments, handouts, lecture\u00a0...", 
+            "keyword": "site:ocw.mit.edu angular", 
+            "link": "https://ocw.mit.edu/courses/mechanical-engineering/2-003sc-engineering-dynamics-fall-2011/angular-momentum-and-torque/", 
+            "rank": 1, 
+            "title": "Angular Momentum and Torque | Engineering Dynamics | Mechanical ..."
+          }
+        ]
+      }, 
+      {
+        "edx.org": [
+          {
+            "description": "Begin programming with AngularJS, a complete JavaScript-based open-source client and server-side web application framework that allows you to use HTML\u00a0...", 
+            "keyword": "site:edx.org angular", 
+            "link": "https://www.edx.org/course/angularjs-framework-fundamentals", 
+            "rank": 1, 
+            "title": "AngularJS: Framework Fundamentals - edX"
+          }
+        ]
+      }, 
+      {
+        "coursera.org": [
+          {
+            "description": "Front-End JavaScript Frameworks: Angular from The Hong Kong University of Science and Technology. This course concentrates mainly on Javascript based\u00a0...", 
+            "keyword": "site:coursera.org angular", 
+            "link": "https://www.coursera.org/learn/angular", 
+            "rank": 1, 
+            "title": "Front-End JavaScript Frameworks: Angular | Coursera"
+          }
+        ]
+      }, 
+      {
+        "pluralsight.com": []
+      }
+    ], 
     "setup": [
-        {
-            "windows": [
-                {
-                    "description": "In the Edit System Variable (or New System Variable) window, specify the value of the PATH environment variable. Click OK. ... To set the path permanently, set the path in your startup file. ... Find expert help on Java installation and setup.",
-                    "keyword": "site:java.com set up on windows",
-                    "link": "https://www.java.com/en/download/help/path.xml",
-                    "rank": 1,
-                    "title": "How do I set or change the PATH system variable? - Java"
-                },
-                {
-                    "description": "What is the offline method for downloading and installing Java for a Windows computer? ... Find expert help on Java installation and setup. Select Language\u00a0...",
-                    "keyword": "site:java.com set up on windows",
-                    "link": "https://www.java.com/en/download/help/windows_offline_download.xml",
-                    "rank": 2,
-                    "title": "Instructions to download and install Java for Windows offline"
-                },
-                {
-                    "description": "How do I enable the latest Java version on my Windows system? ... Find expert help on Java installation and setup. Select Language | About Java | Support\u00a0...",
-                    "keyword": "site:java.com set up on windows",
-                    "link": "https://www.java.com/en/download/help/update_runtime_settings.xml",
-                    "rank": 3,
-                    "title": "Update Java runtime settings on Windows"
-                }
-            ]
-        },
-        {
-            "mac": [
-                {
-                    "description": "Mac System Requirements for Oracle Java 7 and later versions. Intel-based ... Install Java on Mac. Download ... Find expert help on Java installation and setup.",
-                    "keyword": "site:java.com set up on mac",
-                    "link": "https://java.com/en/download/help/mac_install.xml",
-                    "rank": 1,
-                    "title": "How do I install Java for my Mac?"
-                },
-                {
-                    "description": "Information about the Java Control Panel for Mac. ... You can set preferences including proxy servers in this setting. Temporary Internet Files: Files used in Java\u00a0...",
-                    "keyword": "site:java.com set up on mac",
-                    "link": "https://www.java.com/en/download/help/mac_controlpanel.xml",
-                    "rank": 2,
-                    "title": "Where is the Java Control Panel on Mac?"
-                },
-                {
-                    "description": "For Mac OS X 10.6 and below, use the Software Update feature (available on the Apple menu) to check that you have the most up-to-date version of Java 6 for\u00a0...",
-                    "keyword": "site:java.com set up on mac",
-                    "link": "https://www.java.com/en/download/faq/java_mac.xml",
-                    "rank": 3,
-                    "title": "Mac OS X information for installing and using Java"
-                }
-            ]
-        },
-        {
-            "linux": [
-                {
-                    "description": "Follow these steps to download and install Java for Linux. Download; Install ... Find expert help on Java installation and setup \u00b7 Select Language | About Java\u00a0...",
-                    "keyword": "site:java.com set up on linux",
-                    "link": "https://www.java.com/en/download/help/linux_x64_install.xml",
-                    "rank": 1,
-                    "title": "Linux 64-bit installation instructions for Java"
-                },
-                {
-                    "description": "This installs the Java Runtime Environment (JRE) for 32-bit Linux, using an archive binary file ( .tar.gz ) that can be installed by anyone .... Start the Firefox browser, or restart it if it is already up. ... Find expert help on Java installation and setup.",
-                    "keyword": "site:java.com set up on linux",
-                    "link": "https://www.java.com/en/download/help/linux_install.xml",
-                    "rank": 2,
-                    "title": "How do I download and install 32-bit Java for Linux?"
-                },
-                {
-                    "description": "Platform(s): Oracle Linux, Red Hat Linux, SUSE Linux, Solaris SPARC, Windows ... The PATH system variable can be set using System Utility in control panel on\u00a0...",
-                    "keyword": "site:java.com set up on linux",
-                    "link": "https://www.java.com/en/download/help/path.xml",
-                    "rank": 3,
-                    "title": "How do I set or change the PATH system variable? - Java"
-                }
-            ]
-        }
-    ],
+      {
+        "windows": [
+          {
+            "description": "Setting up a new project on your machine is quick and easy with the ... npm start fails in Bash for Windows in versions earlier than the Creator's Update (April\u00a0...", 
+            "keyword": "site:angular.io set up on windows", 
+            "link": "https://angular.io/guide/setup", 
+            "rank": 1, 
+            "title": "Angular - Setup for local development"
+          }
+        ]
+      }, 
+      {
+        "mac": [
+          {
+            "description": "Setting up a new project on your machine is quick and easy with the ... xargs rm -rf < non-essential-files.osx.txt rm src/app/*.spec*.ts rm non-essential-files.osx.txt\u00a0...", 
+            "keyword": "site:angular.io set up on mac", 
+            "link": "https://angular.io/guide/setup", 
+            "rank": 1, 
+            "title": "Angular - Setup for local development"
+          }
+        ]
+      }, 
+      {
+        "linux": [
+          {
+            "description": "Setting up a new project on your machine is quick and easy with the ... Do this only in the beginning to avoid accidentally deleting your own tests and git setup!", 
+            "keyword": "site:angular.io set up on linux", 
+            "link": "https://angular.io/guide/setup", 
+            "rank": 1, 
+            "title": "Angular - Setup for local development"
+          }
+        ]
+      }
+    ], 
+    "suggestions": [
+      {
+        "link": "https://stackoverflow.com/questions/51688512/map-json-to-object-in-angular", 
+        "question": "Map Json to object in angular", 
+        "rank": 1
+      }, 
+      {
+        "link": "https://stackoverflow.com/questions/41401882/angular-flex-layout-not-working-with-hostbinding", 
+        "question": "@angular/flex-layout not working with @HostBinding", 
+        "rank": 2
+      }, 
+      {
+        "link": "https://stackoverflow.com/questions/51689761/angular-routeprovider-does-not-work-with-spring-boot", 
+        "question": "angular $routeProvider does not work with spring boot", 
+        "rank": 3
+      }, 
+      {
+        "link": "https://stackoverflow.com/questions/51689862/how-to-export-an-angular-project-for-offline-work", 
+        "question": "how to export an angular project for offline work", 
+        "rank": 4
+      }, 
+      {
+        "link": "https://stackoverflow.com/questions/51688475/breakpoint-is-not-hitting-in-vs-code-with-angular-6", 
+        "question": "Breakpoint is not hitting in VS code with angular 6", 
+        "rank": 5
+      }
+    ], 
     "tags": [
-        "java",
-        "android",
-        "spring",
-        "swing",
-        "eclipse"
+      "angular", 
+      "typescript", 
+      "javascript", 
+      "ionic2", 
+      "html"
     ]
-}
+  }
+  
